@@ -1,6 +1,13 @@
-import StartGame from "./components/StartGame"
+import { useState } from "react";
+import StartGame from "./components/StartGame";
 
 function App() {
+
+  const [ gameStarted, setGameStarted ] = useState(false);
+
+  const toggleGameStart = () => {
+    setGameStarted( (prevVal) => !prevVal);
+  }
 
   return (
     <>
