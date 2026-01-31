@@ -1,15 +1,15 @@
-import styled from "styled-components";
-import dices from '../assets/dices.png';
 
-const StartGame = () => {
+import styled from "styled-components";
+
+const StartGame = ( {toggle} ) => {
   return (
     <Container className="start_game">
       <div>
-        <img src={dices} alt="dices_img" />
+        <img src='./src/assets/dices.png' alt="dices_img" />
       </div>
       <div className="game_content">
         <h1>DICE GAME</h1>
-        <Button>Play Now</Button>
+        <Button onClick={toggle}>Play Now</Button>
       </div>
     </Container>
   )
@@ -48,7 +48,7 @@ const Button = styled.button`
   width: 220px;
   height: 42px;
   font-size: 16px;
-  transition: all .3s ease-in-out;
+  transition: all .2s ease-in-out;
 
   &:hover{
     background-color: white;

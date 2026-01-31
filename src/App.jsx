@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GamePlay from "./components/GamePlay";
 import StartGame from "./components/StartGame";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
 
   return (
     <>
-      <StartGame />
+      {gameStarted ? <GamePlay/> : <StartGame toggle={toggleGameStart}/>}
     </>
   )
 }
