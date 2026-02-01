@@ -1,16 +1,21 @@
-import { useState } from "react";
+
 import styled from "styled-components";
 
-const SelectNo = () => {
+const SelectNo = ({selectedNo, setSelectedNo, error, setError}) => {
 
     const array = [1, 2, 3, 4, 5, 6];
-    const [ selectedNo, setSelectedNo] = useState();
+
+    const numSelectHandle = (val) => {
+        setSelectedNo(val);
+        setError("");
+    }
 
     return (
         <SelectNum>
+            <p className="error">{error}</p>
             <BoxContainer className="box_container">
                 {array.map( (val) =>
-                    <Box key={val} onClick={() => setSelectedNo(val)}
+                    <Box key={val} onClick={() => numSelectHandle(val)}
                         $isSelected={val === selectedNo}>
                         {val}
                     </Box>)}
@@ -25,7 +30,7 @@ export default SelectNo
 const SelectNum = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     gap: 10px;
     /* background-color: red; */
@@ -33,6 +38,10 @@ const SelectNum = styled.div`
     p{
         font-size: 24px;
         font-weight: 700px;
+    }
+
+    .error{
+        color: #ff5353;
     }
 `
 
