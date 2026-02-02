@@ -33,7 +33,6 @@ const SelectNum = styled.div`
     align-items: flex-end;
     justify-content: center;
     gap: 10px;
-    /* background-color: red; */
 
     p{
         font-size: 24px;
