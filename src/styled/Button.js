@@ -33,4 +33,4 @@ export const OutlineBtn = styled(Button)`
     color: white;
     border: 1px solid black;
   }
-`;
+`
